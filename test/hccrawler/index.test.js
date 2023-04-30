@@ -78,11 +78,11 @@ describe('HCCrawler', () => {
       });
 
       afterAll(() => {
-        (this.server !== undefined) && this.server.stop();
+        if (this.server !== undefined) this.server.stop();
       });
 
       beforeEach(() => {
-        (this.server !== undefined) && this.server.reset();
+        if (this.server !== undefined) this.server.reset();
       });
 
       test('emits a disconnect event', async () => {
